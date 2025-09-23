@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/images/logo-repo.png" alt="nix-config by vlntss" height=200px"/>
+  <img src="assets/images/logo-repo.png" alt="nix-config by vlntss" height=100px"/>
 </p>
 
 <p align="center">
