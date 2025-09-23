@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/images/megadots.png" alt="nix-config by vlntss"/>
+  <img src="assets/images/logo-repo.png" alt="nix-config by vlntss" height=200px"/>
 </p>
 
 <p align="center">
@@ -7,19 +7,20 @@
   <a href="https://github.com/nix-community/home-manager"><img src="https://img.shields.io/badge/Home--Manager-25.05-blue?style=for-the-badge&logo=Home-Assistant" alt="Home Manager"></a>
 </p>
 
-# megadots
+# Introduction.
 
 My modular, flake-based repo for managing my systems using Nix and NixOS, flakes and Home Manager (as a NixOS module). I publish megadots to help others, as I found Github and other peoples repos (some shoutouts below!) extremely helpful to learn Nix/NixOS. Hopefully I can return the favour by publishing my own, for those who come after.
 
 > **Note:** Though I use this repo for my own config, I also dabble and break things from time to time. I tend to keep working code in the `main` branch. Any other branch, assume it is a work in progress and not suitable for use. Also note that as this is my primary personal config, my `hardware-configuration.nix` files and attributes like `hostname`, `hashedPassword` and `username` will be unique to me, so you'll have to bring your own.
 
-## Introduction
+## About.
 
 This is my personal system configuration repo that I use to build systems and homes in conjunction with NixOS, Home Manager and flakes. I started out this journey based on sheer curiosity and a desire to have a somewhat declaritive composition to system management (I distro hop - a lot). Some searching online lead me down the garden path that is NixOS, and here I am. Down the rabbit hole.
 
 I am not an expert in Nix, NixOS, Home Manager or flakes. Nor am I a developer. Outside of my consultancy job (in a technical field so not completely in the dark), I'm a tinkerer. I'd been feeling a little burnt out and in need of something to learn in my downtime, and this project came along at the perfect time, and has genuinely brought some fun back in to computing for me. Just like the days of old, going to the local monthly computer market and picking up a fresh copy of a new Linux distro on a wad of floppies and taking it for a spin.
 
-## Features
+## Features.
+
 - :desktop_computer: **NixOS** system configuration on mulitple hosts.
 - :house: **Home Manager** user configuration for my user.
 - :camera_flash: **Optional Impermanence** with LUKS encrypted btrfs snapshot and rollback.
@@ -29,11 +30,11 @@ I am not an expert in Nix, NixOS, Home Manager or flakes. Nor am I a developer. 
 - :anger: **Chaotic** inputs for CachyOS kernel.
 - :paintbrush: **Custom theme module** for themeing to centralise all theme customisation.
 
-## Usage
+## Usage.
 
 This configuration has a multiple system entry points, with Home Manager configured as a NixOS module. At the moment, I am a single user managing multiple machines (I expect this to grow).
 
-### Getting Started
+### Getting Started.
 
 To deploy a configuration, you can use the `nixos-rebuild` command with the appropriate flake output. For example, to deploy the `endgame` configuration on the local machine:
 
@@ -54,7 +55,7 @@ To deploy to a remote machine over SSH, you can use the `--flake` and `--target-
 nixos-rebuild switch --flake .#endgame --target-host vlntss@endgame --use-remote-sudo
 ```
 
-### Customization
+### Customization.
 
 To adapt this configuration for your own use, you'll need to create a new host and user.
 
@@ -64,14 +65,14 @@ To adapt this configuration for your own use, you'll need to create a new host a
 4.  **Create a new user directory** in `home/` and a corresponding entry in `nixos/config/users`.
 4.  **Create a new host file** in `home/$USER` for the Home Manager config for that specific host and user.
 
-### Updating
+### Updating.
 
 To update the flake inputs (e.g., `nixpkgs`), run the following command:
 
 ```bash
 nix flake update
 ```
-### Configuring Secure Boot
+### Configuring Secure Boot.
 
 To enable Secure Boot for a host, there are a few manual steps that have to happen, focussed around generating encryption keys and enrolling them in to the UEFI firmware for Secure Boot.
 
@@ -106,7 +107,7 @@ sudo sbctl status
 ```
 13. You should see that Secure Boot is listed as enabled (user).
 
-## Hosts
+## Hosts.
 
 | System | Description | Type | OS | CPU | GPU |
 |---|---|---|---|---|---|
@@ -116,7 +117,7 @@ sudo sbctl status
 
 I have a single user that I manage through Home Manager (vlntss). You may add additional users or rename mine to inherit my existing settings - though don't forget to change my hashedPassword to something of your own otherwise you won't be able to log in.
 
-### File structure
+### File structure.
 
 I use the following structure to organise my configurations.
 
@@ -146,7 +147,7 @@ I use the following structure to organise my configurations.
 ├── pkgs                  # Pkgs folder for storing any custom packaged apps.
 ```
 
-## mega-thanks
+## Community.
 
 I learn by doing. None of this would be possible without the copious ammounts of developers and repos that share their content freely for others like me to disect and study. There are many, but to name a few - shout outs go to:
 
