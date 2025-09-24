@@ -116,6 +116,16 @@
     });
     # Define system configurations for each host.
     nixosConfigurations = {
+      # The configuration for my main rig
+      # used for most things named 'moonraker'.
+      moonraker = lib.nixosSystem {
+        modules = [
+          ./hosts/nixos/moonraker/configuration.nix
+        ];
+        specialArgs = {
+          inherit inputs outputs;
+        };
+      };
       # The configuration for a virtual machine
       # used for testing, named 'spectre'.
       spectre = lib.nixosSystem {
